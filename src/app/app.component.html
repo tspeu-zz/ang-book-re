@@ -1,5 +1,15 @@
 <!--The content below is only a placeholder and can be replaced.-->
+<nav class="nav nav-pills nav-fill">
+
+  <a class="nav-item nav-link" routerLink="/login" routerLinkActive="active">LOGIN</a>
+    <a class="nav-item nav-link active" routerLink="/categorias" routerLinkActive="active">categorias</a>
+
+    <a class="nav-item nav-link disabled" href="#"  tabindex="-1" aria-disabled="true">Link</a>
+
+    <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+  </nav>
 <div style="text-align:center">
+
   <h1>
     Welcome to {{ title }}!
   </h1>
@@ -9,9 +19,8 @@
 <div class="container">
 
   <h2>Here are some links to help you start: </h2>
-
-  <!-- <router-outlet></router-outlet> -->
+  <router-outlet></router-outlet>
   <!-- <app-login-form></app-login-form> -->
 
-  <app-categories></app-categories>
+  <!-- <app-categories></app-categories> -->
 </div>

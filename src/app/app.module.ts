@@ -28,7 +28,7 @@ import { CategoriesService } from './services/categories.service';
     RouterModule.forRoot(ROUTES, {
       useHash: Boolean(history.pushState) === false,
       preloadingStrategy: PreloadAllModules,
-      enableTracing: false
+      enableTracing: true
     }),
     HttpClientModule
   ],
