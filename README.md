@@ -1,4 +1,37 @@
 # Forms
+-> para generar un modulo y asignalo a rus routes especificas-->
+
+se genera un module ng g m nombreMODULE
+se genere componentes del modulo-->
+ng g c nombreModulo/nombreComponente
+
+y se genere el modulo routing-module-->
+
+##alli lleva todas las rutas. tanto de componentes como de modulos>
+para compopnentes-->
+ { path : 'nopmbre', component: NombreComponent },
+ para modulos en Angular 7->
+  path : 'modulo',
+ loadChildren: './modulo/fnombreModulo.module#NombreModule'
+
+ ##se import forRoot las rutas y se exporta el modulo
+ @NgModule({
+  declarations: [CategoriesComponent],
+  imports: [CommonModule, RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+
+# En el modulo NombreModulo
+se importa el componenet-> y se crea la ruta-->
+  const route: Routes = [
+    {path: '', component: AnimatorComponent }
+  ];
+#y se importa fro child la Routes
+  declarations: [AnimatorComponent],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(route)
+  ]
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
 

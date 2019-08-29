@@ -1,0 +1,17 @@
+<p>
+  animado works!
+</p>
+<div @myInsertRemoveTrigger *ngIf="isShown" class="open-remove-container">
+    <p>The box is inserted</p>
+  </div>
+
+    <div [@openClose]="isOpen ? true : false" class="open-close-container">
+  </div>
+
+  <div [@.disabled]="isDisabled">
+    <div [@childAnimation]="isOpen ? 'open' : 'closed'"
+    class="open-close-container">
+    <p>The box is now {{ isOpen ? 'Open' : 'Closed' }}!</p>
+  </div>
+</div>
+
