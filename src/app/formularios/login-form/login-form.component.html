@@ -1,27 +1,70 @@
-<section class="container-fluid">
-  <h1>Model-based Form Example:</h1>
+<section class="container-fluid" style="width: 70%;">
+
   <form [formGroup]="form" (ngSubmit)="onSubmitModelBased()">
 
-    <div class="form-group">
-      <label for="name">First Name:</label>
-      <input type="text" formControlName="firstName" id="l-name"  class="form-control form-control-lg">
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <label for="name">Nombre y Apellidos:</label>
+          <input type="text" formControlName="nombre" id="name"  class="form-control form-control-lg">
+        </div>
+      </div>
+    </div>
+    <div *ngIf="nombreValido.touched && !nombreValido.valid" class="alert alert-danger" role="alert">
+      debe poner nombre valido <i class="fas fa-file-signature"></i>
     </div>
 
-    <div class="form-group">
-      <label>Password:</label>
-      <input type="password" formControlName="password" id="l-pass"  class="form-control form-control-lg">
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <label>Teléfono:</label>
+          <input type="text" formControlName="telefono"  pattern="[0-9]" id="tel"  class="form-control form-control-lg">
+        </div>
+        <div *ngIf="telefonoValido.touched && !telefonoValido.valid" class="alert alert-danger" role="alert">
+          debe introducir un mumer de tel válido !<i class="fas fa-phone-square"></i>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="form-group">
+          <label>Email:</label>
+          <input type="email" formControlName="email" id="email"  class="form-control form-control-lg">
+        </div>
+        <div *ngIf="emailValido.touched && !emailValido.valid" class="alert alert-danger" role="alert">
+          debe introducir un email de tel válido !<i class="fas fa-at"></i>
+        </div>
+      </div>
     </div>
 
-    <div class="form-group">
-      <button type="submit" [disabled]="!form.valid" class="btn btn-primary" >Submit</button>
+    <div class="row">
+      <div class="col">
+        <div  class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+            He leído y acepto las <span class="privacidad">las políticas de privacidad. </span>
+              <!-- <a ref=""> <img src=""> </a> -->
+              <i class="fas fa-question-circle"></i>
+            </label>
+        </div>
+      </div>
+      <br>
     </div>
+    <p class="texto-promo">*Promoción válida únicamente en primeras visitas.</p>
 
-    <p>
+      <div class="row justify-content-md-center">
+        <!-- <div class="col"> -->
+          <div class="form-group">
+            <button type="submit" [disabled]="!form.valid" class="btn btn-primary rounded-pill" style="width:200px;">Enviar</button>
+          </div>
+        <!-- </div> -->
+      </div>
+
+      <p>
         <button (click)="partialUpdate()">Partial Update</button>
         <button (click)="fullUpdate()">Full Update</button>
         <button (click)="reset()">Cancel</button>
-    </p>
+      </p>
 
-  </form>
+    </form>
 </section>
 

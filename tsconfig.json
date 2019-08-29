@@ -14,9 +14,47 @@
     "typeRoots": [
       "node_modules/@types"
     ],
+    "paths": {
+      "@app/*": ["app/*"],
+      "@env/*": ["environments/*"],
+      "@serv/*": ["services/*"],
+      "@models/*": ["models/*"],
+      "@utils/*": ["utils/*"]
+    },
     "lib": [
       "es2018",
       "dom"
     ]
   }
 }
+/**
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es5",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "baseUrl": "src",
+    "paths": {
+      "@app/*": ["app/*"],
+      "@env/*": ["environments/*"],
+      "@serv/*": ["services/*"],
+      "@models/*": ["models/*"],
+      "@utils/*": ["utils/*"]
+    },
+    "lib": [
+      "es2017",
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ]
+  }
+}
+*/
