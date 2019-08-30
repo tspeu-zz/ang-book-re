@@ -33,6 +33,15 @@ se importa el componenet-> y se crea la ruta-->
     RouterModule.forChild(route)
   ]
 
+
+
+#ADD INTERCEPTORES-->
+ng g s services/GeneralErrorHandler
+ng g s services/GeeralHttpInterceptor
+
+#en app.module->
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
 
 ## Development server
